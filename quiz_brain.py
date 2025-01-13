@@ -11,4 +11,8 @@ class QuizBrain:
     def next_question(self):
         # self.question_number += 1
         current_question = self.question_list[self.question_number]
-        response = bool(input(f'Q.{self.question_number+1}: {current_question.text} (True/False):  '))
+        self.question_number += 1
+        response = bool(input(f'Q.{self.question_number}: {current_question.text} (True/False):  '))
+
+    def still_has_questions(self):
+        return self.question_number < len(self.question_list)

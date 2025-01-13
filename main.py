@@ -12,3 +12,7 @@ for question in question_data:
 # Create the quiz brain
 quiz = QuizBrain(question_bank)
 quiz.next_question()
+
+while quiz.still_has_questions():
+    quiz.next_question()
+
